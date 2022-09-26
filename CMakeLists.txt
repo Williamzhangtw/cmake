@@ -22,9 +22,13 @@ add_library(applib ./src/fun.c)
 # message(STATUS ${my_output_variable})
 
 ## find package example
-set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake/modules")
-find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
+# set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake/modules")
+# find_package(SDL2 REQUIRED)
+# include_directories(${SDL2_INCLUDE_DIRS})
+
+## pkg search example
+include(FindPkgConfig)
+pkg_search_module(SDL2 REQUIRED sdl2>=2.0.1)
 
 
 ## link example
