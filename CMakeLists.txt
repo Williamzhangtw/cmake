@@ -30,6 +30,9 @@ add_library(applib ./src/fun.c)
 include(FindPkgConfig)
 pkg_search_module(SDL2 REQUIRED sdl2>=2.0.1)
 
+## set variable forcely
+set(my_global_overwritten_string "foo"
+CACHE STRING "this is overwritten each time CMake is run" FORCE)
 
 ## link example
 add_executable(${PROJECT_NAME} ./src/main.c)
